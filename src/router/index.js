@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Home from '../views/layout/Home.vue';
 
 // export const URLS = {
 //   getSide: '/getsidebar',
@@ -15,7 +16,16 @@ Vue.use(VueRouter);
 // }];
 
 const routes = [
-
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName:"about" */'../views/About.vue'),
+  },
 ];
 
 const router = new VueRouter({
